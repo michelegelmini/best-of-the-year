@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Carrello {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String productTypeSelected = "";
+		Scanner productType = new Scanner(System.in);
+		System.out.println("Vuoi aggiungere uno smartphone, un monitor o delle cuffie?");
+		productTypeSelected = productType.nextLine().toLowerCase();
+		
+	
+		
+		if (productTypeSelected == "smartphone") {
+			System.out.println("Hai aggiunto uno smartphone");
+		} else if (productTypeSelected == "monitor") {
+			System.out.println("Hai aggiunto un monitor");
+		} else if (productTypeSelected == "monitor") {
+			System.out.println("Hai aggiunto delle cuffie");
+		}
+	}
+	
+
+}

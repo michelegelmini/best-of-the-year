@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/Users/michelegelmini/Library/Mobile Documents/com~apple~CloudDocs/Docs/Boolean/Corso/Lezioni/java/.metadata/.plugins/org.eclipse.jdt.core
+1478422893.index
+1865797976.index
+3871536699.index
