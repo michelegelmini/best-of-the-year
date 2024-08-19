@@ -2,12 +2,14 @@ package org.lessons.java.spring.bestoftheyear.controller;
 
 import java.util.Random;
 
-public class Movie {
+public class Song {
 	private String id;
 	private String title;
+	private String artist;
 	
-	public Movie(String title) {
+	public Song(String title, String artist) {
 		this.title = title;
+		this.artist = artist;
 		this.setId(generateID());
 	}
 	
@@ -34,9 +36,18 @@ public class Movie {
 		this.id = id;
 	}
 	
-	@Override 
-	public String toString() {
-		return this.id + " - " + this.title;
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
 	}
 	
+	@Override 
+	public String toString() {
+		return this.id + " - " + this.title +  " by " + this.artist;
+	}
 }
+

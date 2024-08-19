@@ -10,7 +10,7 @@
 <div>
 <h1 >Best movies of the year by <span th:text='${name}'></span></h1>
 <ol>
-	<li th:each="movie: ${movieList}" th:text="${movie.toString()}">
+	<li th:each="song: ${songList}" th:utext="${song.toString()}">
 	</li>
 </ol>
 
