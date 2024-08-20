@@ -8,9 +8,13 @@
 </head> 
 <body>
 <div>
-<h1 >Best movies of the year by <span th:text='${name}'></span></h1>
+<h1 >Best songs of the year by <span th:text='${name}'></span></h1>
 <ol>
-	<li th:each="song: ${songList}" th:utext="${song.toString()}">
+	<li th:each="song: ${songList}" th:text="${song.toString}">
+		<div>
+			<strong th:each="song: ${songList}" th:text="${song.getTitle()}">
+			</strong>
+		</div>
 	</li>
 </ol>
 
