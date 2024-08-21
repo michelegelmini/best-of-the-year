@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html xmins:th= "http://www.thymeleaf.org">
-<head>
-<title>Homepage</title>
-<link rel="stylesheet" th:href="@{css/app.css}">
-<!-- Bootstrap CSS -->
-<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
-</head> 
-<body>
-	<navbar>
-				<div th:insert="button :: navbar"></div>
-			</navbar>
-<div>
-<h1 >Best [[${title}]] of the year by [[${name}]]</h1>
-<ul>
-	<li th:each="element: ${list}">
-		<a th:text="${element.toString()}" th:href="@{${title} + '/' + ${element.getId()}}"></a>
-	</li>
-</ul>
+<html xmins:th="http://www.thymeleaf.org">
 
-</div>
-</body>
+	<head>
+		<title>Homepage</title>
+		<link rel="stylesheet" th:href="@{css/app.css}">
+		<!-- Bootstrap CSS -->
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+	</head>
+
+	<body>
+		<container class="container-sm d-flex flex-column mt-2 border border-dark border-3 p-0">
+			<div class="d-flex flex-column " th:insert="navbar :: navbar">
+
+			</div>
+
+			<div class="d-flex justify-content-center align-items-center flex-column">
+				<h2>Best [[${title}]] of the year by [[${name}]]</h2>
+				<div class="d-flex justify-content-center flex-column p-1">
+
+					<a class="btn btn-outline-dark rounded-0 " th:each="element: ${list}" th:text="${element.toString()}"
+						th:href="@{${title} + '/' + ${element.getId()}}"></a>
+
+				</div>
+			</div>
+		</container>
+	</body>
+
 </html>
-

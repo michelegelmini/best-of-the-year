@@ -9,16 +9,16 @@
 	</head>
 
 	<body>
+		<container class="container-sm d-flex flex-column mt-2 border border-dark border-3 p-0">
 		<navbar>
-					<div th:insert="button :: navbar"></div>
+					<div th:insert="navbar :: navbar"></div>
 				</navbar>
 		<div>
 			<h1>Best [[${title}]] of the year by [[${name}]]</h1>
 
 			<h2>Page details for [[${selectedItem}]]</h2>
-
-
 		</div>
+		</container>
 	</body>
 
 </html>
