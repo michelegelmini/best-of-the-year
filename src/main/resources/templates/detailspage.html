@@ -9,15 +9,22 @@
 	</head>
 
 	<body>
-		<container class="container-sm d-flex flex-column mt-2 border border-dark border-3 p-0">
-		<navbar>
-					<div th:insert="navbar :: navbar"></div>
-				</navbar>
-		<div>
-			<h1>Best [[${title}]] of the year by [[${name}]]</h1>
+		<container class="container-sm d-flex flex-column m-2 border border-dark border-3 p-0">
+			<navbar>
+				<div th:insert="navbar :: navbar"></div>
+			</navbar>
+			<div class="p-2">
+				<div class="d-flex flex-column justify-content-center text-center align-items-center">
+					<h2>[[${selectedItem}]]</h2>
+				</div>
+				<div class="d-flex flex-column align-items-center ratio ratio-16x9">
+					<iframe class="" th:src="@{https://www.youtube.com/embed/}+${link}" title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
 
-			<h2>Page details for [[${selectedItem}]]</h2>
-		</div>
 		</container>
 	</body>
 

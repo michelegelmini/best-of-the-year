@@ -10,20 +10,24 @@
 
 	<body>
 		<container class="container-sm d-flex flex-column mt-2 border border-dark border-3 p-0">
-			<div class="d-flex flex-column " th:insert="navbar :: navbar">
-
+			
+			<div class="flex-column " th:insert="navbar :: navbar">
 			</div>
+			
+			<div class="container py-3">
 
-			<div class="d-flex justify-content-center align-items-center flex-column">
-				<h2>Best [[${title}]] of the year by [[${name}]]</h2>
-				<div class="d-flex justify-content-center flex-column p-1">
+				<div class="d-flex flex-column align-items-center">
+					<h2>Best [[${title}]] of the year by [[${name}]]</h2>
+					<div class="d-flex flex-column align-items-start  p-1">
+						<a class="btn btn-outline-dark rounded-0 flex-grow-1" th:each="element: ${list}"
+							th:text="${element.toString()}" th:href="@{${title} + '/' + ${element.getId()}}"></a>
 
-					<a class="btn btn-outline-dark rounded-0 " th:each="element: ${list}" th:text="${element.toString()}"
-						th:href="@{${title} + '/' + ${element.getId()}}"></a>
-
+					</div>
 				</div>
 			</div>
 		</container>
+
+
 	</body>
 
 </html>
