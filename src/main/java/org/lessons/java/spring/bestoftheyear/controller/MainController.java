@@ -50,13 +50,19 @@ public class MainController {
 		}
 		
 		@GetMapping("/movies/{id}")
-		public String movieDetails(String title, @PathVariable("id") Integer movieId, Model model) {
+		public String movieDetails(@PathVariable("id") Integer movieId, Model model) {
+			String title = "movies";
+			String selectedItem = null;
+			
 			for(Movie movie: getBestMovies()) {
 				if(movieId.equals(movie.getId())){
-					title = movie.getTitle();
+					selectedItem = movie.getTitle();
 					break;
 				}
 			}
+			model.addAttribute("title", title);
+			model.addAttribute("selectedItem", selectedItem);
+			
 			return "detailspage";
 		}
 		
@@ -69,14 +75,19 @@ public class MainController {
 		}
 		
 		@GetMapping("/songs/{id}")
-		public String songDetails(String title, @PathVariable("id") Integer songId, Model model) {
+		public String songDetails(@PathVariable("id") Integer songId, Model model) {
+			String title = "songs";
+			String selectedItem = null;
+			
 			for(Song song: getBestSongs()) {
 				if(songId.equals(song.getId())){
-					title = song.getTitle();
+					selectedItem = song.getTitle();
 					break;
 				}
 			}
 			model.addAttribute("title", title);
+			model.addAttribute("selectedItem", selectedItem);
+			
 			
 			return "detailspage";
 		}
