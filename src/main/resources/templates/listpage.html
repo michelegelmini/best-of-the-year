@@ -8,11 +8,11 @@
 </head> 
 <body>
 <div>
-<h1 >Best songs of the year by <span th:text='${name}'></span></h1>
-<ol>
-	<li th:each="song: ${songList}" th:text="${song.toString}">
+<h1 >Best [[${title}]] of the year by [[${name}]]</h1>
+<ul>
+	<li th:each="element: ${list}" th:text="${element.toString()}">
 	</li>
-</ol>
+</ul>
 
 </div>
 </body>

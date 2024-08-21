@@ -1,22 +1,15 @@
 package org.lessons.java.spring.bestoftheyear.controller;
 
-import java.util.Random;
 
 public class Movie {
-	private String id;
+	private int id;
 	private String title;
 	
-	public Movie(String title) {
+	public Movie(int id, String title) {
 		this.title = title;
-		this.setId(generateID());
+		this.id = id;
 	}
 	
-	static String generateID() {
-		Random r = new Random();
-		int max = 10000;
-		int result = r.nextInt(max);
-		return (String.format("%04d", result));
-	}
 
 	public String getTitle() {
 		return title;
@@ -26,11 +19,11 @@ public class Movie {
 		this.title = title;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
